@@ -9,4 +9,4 @@
 'JavaScript'
 ```
 
-[자바스크립트를 이용한 메시지 출력](/helloworld)
+[자바스크립트를 이용한 메시지 출력](/javascript_example)
