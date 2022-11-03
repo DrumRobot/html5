@@ -1,0 +1,20 @@
+<!-- p.21 cat-hello-vue.html -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app">
+      <button @click="handleClick()">클릭</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        methods: {
+          handleClick: function () {
+            alert('클릭했어요!');
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

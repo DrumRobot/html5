@@ -3,5 +3,9 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "sass": "^1.55.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-plugin-html": "^7.1.0"
   }
 }

@@ -1,0 +1,25 @@
+<!-- p.21 cat-hello-vue.html -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app">
+      <input v-bind:value="message" v-on:input="handleInput" />
+      <p>{{message}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js',
+        },
+        methods: {
+          handleInput: function (event) {
+            // 할당 전에 어떤 처리하기
+            this.message = event.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

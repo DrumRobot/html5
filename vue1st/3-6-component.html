@@ -1,0 +1,19 @@
+<!-- p.53 vue1st/3-6-component.html -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app">
+      <my-component></my-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+    <script>
+      Vue.component('myComponent', {
+        template:
+          '<span>myComponent 컴포넌트는 my-component로 호출해야 합니다.</span>',
+      });
+      new Vue({
+        el: '#app',
+      });
+    </script>
+  </body>
+</html>
