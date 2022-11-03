@@ -1,0 +1,12 @@
+<div id="app">
+  <span v-html="rawHtml">
+</div>
+<script src="https://unpkg.com/vue@2.7.13"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      rawHtml: "Hello <b>Vue.js</b>"
+    }
+  });
+</script>

@@ -1,0 +1,15 @@
+<!-- p.56 vue1st/3-9-comp-opt-func.html -->
+<div id="app">
+  <comp />
+</div>
+<script src="https://unpkg.com/vue@2.7.13"></script>
+<script>
+  Vue.component('comp', {
+    render(h) {
+      return h('span', '안녕하세요.  Vue입니다.');
+    },
+  });
+  new Vue({
+    el: '#app',
+  });
+</script>
