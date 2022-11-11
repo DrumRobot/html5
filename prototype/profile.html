@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>프로필</title>
+    <style>
+      #container {
+        width: 320px;
+        height: 100%;
+        border: 1px solid #eeeeee;
+        margin: auto; /* 가운데 정렬 */
+      }
+      #profile {
+        background: #eeeeee;
+        height: 60px;
+        padding: 20px;
+      }
+      .left {
+        float: left;
+      }
+      .textbox {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      .label {
+        display: block;
+      }
+      #gallery {
+        display: grid;
+        gap: 10px; /* grid 자식요소간의 간격 */
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 10px; /* 자신과 자식요소간의 간격 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <div class="left">
+          <img src="http://place-hold.it/60x60"/>
+        </div>
+        <div class="left textbox">1111<span class="label">게시물</span></div>
+        <div class="left textbox">2222<span class="label">팔로워</span></div>
+        <div class="left textbox">3333<span class="label">팔로잉</span></div>
+      </div> <!-- CSS로 높이 설정 -->
+      <div id="gallery">
+        <img src="http://place-hold.it/80x80"/>
+        <img src="http://place-hold.it/80x80"/>
+        <img src="http://place-hold.it/80x80"/>
+        <img src="http://place-hold.it/80x80"/>
+        <img src="http://place-hold.it/80x80"/>
+        <img src="http://place-hold.it/80x80"/>
+      </div>
+    </div>
+  </body>
+</html>
