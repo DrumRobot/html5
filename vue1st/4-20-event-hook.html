@@ -1,0 +1,24 @@
+<!-- vue1st/4-20-event-hook.html -->
+<script src="https://unpkg.com/vue@2.7.13"></script>
+<div id="app">{{ hello }}</div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      hello: 'vue.js',
+    },
+    beforeCreate() { // data 접근 불가
+      console.log('beforeCreate 이벤트가 발생되었습니다.', this.hello, this.$el);
+      this.hello = 'test';
+    },
+    created() { // data 접근 가능, $el 접근 불가
+      console.log('created 이벤트가 발생되었습니다.', this.hello, this.$el);
+    },
+    beforeMount() { // data, $el 모두 접근 가능
+      console.log('beforeMount 이벤트가 발생되었습니다.', this.hello, this.$el);
+    },
+    mounted() { // data 바인딩 완료
+      console.log('mounted 이벤트가 발생되었습니다.', this.hello, this.$el);
+    },
+  });
+</script>
