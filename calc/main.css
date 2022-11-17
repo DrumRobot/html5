@@ -1,0 +1,9 @@
+#calc {
+  width: 191px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  margin: auto;
+  padding: 1px;
+}

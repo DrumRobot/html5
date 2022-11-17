@@ -1,0 +1,15 @@
+﻿<!-- html5/chapter_9/loop_for_square.html -->
+<script>
+  var answer = []; // numbers의 모든 수를 제곱하기
+  var numbers = [1, 2, 100, -99, 1, 2, 3];
+
+  // 반복을 수행합니다.
+  for (var i = 0; i < numbers.length; i++) {
+    // 연습: 출력합니다.
+    document.write(`<p>${numbers[i] ** 2}</p>`);
+    // 실전: answer의 i 자리에 하나씩 대입하기
+    answer[i] = numbers[i] ** 2;
+    // 또는 answer.push(numbers[i] ** 2) 이용하기
+  }
+  document.write(answer);
+</script>

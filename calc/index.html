@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+      input {
+        width: 100%;
+        border: 0px solid black; /* 두께 종류 색 */
+      }
+      button {
+        width: 47px;
+        height: 40px;
+        border: 0px solid black;
+      }
+      button:hover { /* 마우스 오버시 */
+        background-color: antiquewhite;
+      }
+      button:active { /* 클릭시 (hover보다 밑에 있어야 적용) */
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calc">
+      <input type="number" />
+      <button value="AC">AC</button>
+      <button value="^">^</button>
+      <button value="%">%</button>
+      <button value="/">/</button>
+      <button value="7">7</button>
+      <button value="8">8</button>
+      <button value="9">9</button>
+      <button value="*">x</button>
+      <button value="4">4</button>
+      <button value="5">5</button>
+      <button value="6">6</button>
+      <button value="-">-</button>
+      <button value="1">1</button>
+      <button value="2">2</button>
+      <button value="3">3</button>
+      <button value="+">+</button>
+      <button value="0">0</button>
+      <button value="=">=</button>
+    </div>
+    <br/>
+    <script src="calc.js"></script>
+  </body>
+</html>

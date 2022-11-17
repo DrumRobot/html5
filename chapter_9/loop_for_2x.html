@@ -1,0 +1,15 @@
+﻿<!-- html5/chapter_9/loop_for_2x.html -->
+<script>
+    var answer = [];
+    var numbers = [1, 2, 100, -99, 1, 2, 3];
+
+    // 반복을 수행합니다.
+    for (var it of numbers) {
+        // 연습: 출력합니다.
+        document.write(`<p>${it * 2}</p>`);
+        // 실전: answer의 i 자리에 하나씩 대입하기
+        // answer[i] = numbers[i] * 2;
+        answer.push(it * 2)
+    }
+    document.write(answer);
+</script>
