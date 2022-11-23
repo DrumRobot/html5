@@ -1,0 +1,12 @@
+<!-- self/2-eval.html -->
+<script>
+  const left = parseInt(prompt('첫 번째 항을 입력하세요.'));
+  const operator = prompt('연산자를 입력하세요.');
+  const right = parseInt(prompt('두 번째 항을 입력하세요.'));
+
+  // 문자열의 자바스크립트를 계산
+  const result = eval(left + operator + right);
+
+  // 템플릿 문자열 출력
+  alert(`${left} ${operator} ${right} = ${result}`);
+</script>
