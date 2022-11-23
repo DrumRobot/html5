@@ -1,0 +1,13 @@
+<!-- selfjs/4-2-lodash.html -->
+<script src="https://unpkg.com/lodash"></script>
+<script>
+  let n = Number(prompt('n을 입력하세요.'));
+  let sum = 0;
+  let series = _.range(1, n + 1); // 1 to n
+  for (let i of series) {
+    if (i % 2 == 0) {
+      sum += i; // 짝수만 더한다
+    }
+  }
+  document.write(sum);
+</script>

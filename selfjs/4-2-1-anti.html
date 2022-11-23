@@ -1,0 +1,14 @@
+<!-- selfjs/4-2-1-anti.html -->
+<script>
+  const todos = ['우유구매', '업무 메일 확인하기', '필라테스 수업']
+  /* for in 반복문은 배열이 아니라 객체(오브젝트)를 위해 설계됐다. */
+  Array.prototype.last = function () {
+    return this[this.length - 1]
+  };
+  document.write(todos.last());
+  for (const i in todos) {
+    if (todos.hasOwnProperty(i)) {
+      console.log(`${i}번째 할 일: ${todos[i]}`)
+    }
+  }
+ </script>

@@ -1,0 +1,17 @@
+<!-- 4-li-query.html -->
+<ul>
+  <!-- ol ordered list -->
+  <!-- ul: unordered list -->
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<script>
+  const todos = ['우유구매', '업무 메일 확인하기', '필라테스 수업'];
+  let items = document.querySelectorAll('li');
+  // for (let [i, li] of items.entries()) {
+  for (let i = 0; i < items.length; i++) {
+    let li = items[i];
+    li.innerText = `${i + 1}번째 할 일: ${todos[i]}`;
+  }
+</script>

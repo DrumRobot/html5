@@ -1,0 +1,12 @@
+<!-- 4-1-splice.html -->
+<script>
+  const array = ['사과', '배', '바나나', '사과', '배', '바나나'];
+  while(true) {
+    var index = array.indexOf('바나나'); // 바나나의 인덱스
+    if (index === -1) {
+      break;
+    }
+    array.splice(index, 1); // index 위치의 요소를 1개 제거
+  }
+  document.write(array);
+</script>

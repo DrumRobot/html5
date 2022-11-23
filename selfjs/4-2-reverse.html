@@ -1,0 +1,14 @@
+<!-- selfjs/04/4-2-reverse.html -->
+<script>
+  // const answer = [];
+  const array = [1, 2, 3, 4, 5];
+  // for (let i = array.length - 1; i >= 0; i--) {
+  //   answer.push(array[i]);
+  // }
+  document.write(
+    array.reduce(
+      (prev, cur) => [cur].concat(prev),
+      [] // initialValue
+    )
+  );
+</script>
