@@ -1,0 +1,24 @@
+<!-- self/3-calc.html -->
+<script>
+  const left = Number(prompt('첫 번째 항을 입력하세요.'));
+  const operator = prompt('연산자를 입력하세요.');
+  const right = Number(prompt('두 번째 항을 입력하세요.'));
+
+  let result;
+
+  switch (operator) {
+    case '+':
+      result = left + right;
+      break;
+    case '-':
+      result = left - right;
+      break;
+    case '*':
+      result = left * right;
+      break;
+    case '/':
+      result = left / right;
+  }
+
+  alert(`${left} ${operator} ${right} = ${result}`);
+</script>

@@ -1,0 +1,25 @@
+<!-- selfjs/3-1-5-lecture.html -->
+<script>
+  // 30분 전 시간 구하기
+  const ms = Date.now(); // 현재 시간을 밀리초로 가져옵니다.
+  const min30 = 30 * 60 * 1000; // 30분
+  const date = new Date(ms - min30); // 30분 전의 날짜/시간
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+
+  // if else if 조건문
+  if (hour < 9) {
+    // 표현식 hour < 9가 참일 때 실행합니다.
+    alert('아침 먹을 시간입니다.');
+  } else if (hour == 12) {
+    // 표현식 hour < 9가 거짓이고 표현식 hour == 12가 참일 때 실행합니다.
+    alert('점심 먹을 시간입니다.');
+  } else if (hour >= 17) {
+    // 표현식 hour >= 17가 참일 때 실행합니다.
+    alert('저녁 먹을 시간입니다.');
+  } else if (minutes >= 50) { // 20분 ~ 30분
+    alert('쉬는 시간입니다.');
+  } else {
+    alert('강의 시간입니다.');
+  }
+</script>

@@ -1,0 +1,15 @@
+<!-- selfjs/03/3-2-3-short.html -->
+<script>
+  // 변수를 선언합니다.
+  const input = prompt('숫자를 입력해주세요.', '');
+  const number = Number(input);
+
+  // 짧은 조건문
+  var result =
+    number >= 0 ? '0 이상의 숫자입니다.' : '0보다 작은 숫자입니다.';
+  alert(result);
+
+  var result =
+    (number >= 0 && '0 이상의 숫자입니다.') || '0보다 작은 숫자입니다.';
+  alert(result);
+</script>
