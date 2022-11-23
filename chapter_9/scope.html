@@ -1,0 +1,16 @@
+<!-- html5/chapter_9/scope.html -->
+<script> // 전역 스코프
+var a = 'a'; // a는 전역 스코프
+let b = 'b'; // b는 전역 스코프x
+document.write(window.a);
+document.write('<br>');
+document.write(window.b);
+if (a == 'a') { // 블록 스코프
+  var c = 'c'; // c는 블록 스코프x -> 전역
+  let d = 'd'; // d는 블록 스코프
+}
+document.write('<br>');
+document.write(window.c);
+document.write('<br>');
+document.write(window.d);
+</script>
