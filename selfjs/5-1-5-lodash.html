@@ -1,0 +1,11 @@
+<!-- selfjs/5-1-5-lodash.html -->
+<script src="https://unpkg.com/lodash"></script>
+<script>
+ /* a 부터 b 까지의 정수를 더한 결과를 반환 */
+ function sumAtoB(a, b) {
+   return _.sum(_.range(a, b + 1))
+ }
+
+ console.log(`1부터 100까지의 합: ${sumAtoB(1, 100)}`)
+ console.log(`1부터 500까지의 합: ${sumAtoB(1, 500)}`)
+</script>

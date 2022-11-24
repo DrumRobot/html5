@@ -1,0 +1,17 @@
+<!-- selfjs/5-1-5-reduce.html -->
+<script>
+  /* a 부터 b 까지의 정수 배열을 반환 */
+  function series(a, b) {
+    const output = [];
+    for (let i = a; i <= b; i++) {
+      output.push(i);
+    }
+    return output;
+  }
+  function sumAtoB(a, b) {
+    return series(a, b).reduce((prev, cur) => prev + cur);
+  }
+
+  console.log(`1부터 100까지의 합: ${sumAtoB(1, 100)}`);
+  console.log(`1부터 500까지의 합: ${sumAtoB(1, 500)}`);
+</script>

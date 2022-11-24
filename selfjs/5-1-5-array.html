@@ -1,0 +1,28 @@
+<!-- selfjs/5-1-5-array.html -->
+<script>
+  /* a 부터 b 까지 정수를 output에 push */
+  function series(a, b) {
+    const output = [];
+    for (let i = a; i <= b; i++) { // i: 정수
+      output.push(i);
+    }
+    return output;
+  }
+  /* array의 모든 요소를 sum에 더하기 */
+  function sumArray(array) {
+    let sum = 0;
+    // for (let i = 0; i < array.length; i++) { // i: 인덱스
+    //   sum += array[i];
+    // }
+    for (let item of array) {
+      sum += item;
+    }
+    return sum;
+  }
+  function sumAtoB(a, b) {
+    return sumArray(series(a, b));
+  }
+
+  console.log(`1부터 100까지의 합: ${sumAtoB(1, 100)}`);
+  console.log(`1부터 500까지의 합: ${sumAtoB(1, 500)}`);
+</script>
