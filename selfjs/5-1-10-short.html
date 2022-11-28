@@ -1,0 +1,13 @@
+<!-- selfjs/5-1-10-short.html -->
+<script>
+  function min(first, ...rests) {
+    // 매개변수의 자료형에 따라 조건 분기하기
+    if (Array.isArray(first)) {
+      return Math.min(...first); // 첫 번째 매개변수를 전개
+    }
+    return Math.min(first, ...rests); // 나머지 매개변수를 전개
+  }
+
+  console.log(`min(배열): ${min([52, 273, 32, 103, 275, 24, 57])}`);
+  console.log(`min(숫자, ...): ${min(52, 273, 32, 103, 275, 24, 57)}`);
+ </script>

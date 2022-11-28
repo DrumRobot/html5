@@ -1,0 +1,23 @@
+<!-- selfjs/5-1-10-rests.html -->
+<script>
+  function min(first, ...rests) {
+    // 매개변수의 자료형에 따라 조건 분기하기
+    if (Array.isArray(first)) {
+      var [output, ...items] = first; // 첫 번째 매개변수를 구조분해할당
+    } else {
+      var output = first;
+      var items = rests;
+    }
+
+    // 이전 절에서 살펴보았던 최솟값 구하는 공식
+    for (const item of items) {
+      if (output > item) {
+        output = item;
+      }
+    }
+    return output;
+  }
+
+  console.log(`min(배열): ${min([52, 273, 32, 103, 275, 24, 57])}`);
+  console.log(`min(숫자, ...): ${min(52, 273, 32, 103, 275, 24, 57)}`);
+ </script>

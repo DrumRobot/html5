@@ -1,0 +1,22 @@
+<script>
+  /* selfjs/5-1-6-max.html */
+  function max(array) {
+    let output = array[0];
+    let index;
+    for (const [i, item] of array.entries()) {
+    // for(let i = 0; i < array.length; i++) {
+    //   let item = array[i]
+      // 현재 output 보다 더 큰 item이 있다면
+      if (output < item) {
+        // output 값을 item으로 변경
+        output = item;
+        index = i;
+      }
+    }
+    return [output, index];
+  }
+
+  const testArray = [52, 273, 32, 103, 275, 24, 57];
+  console.log(`${testArray}중에서`);
+  console.log(`최댓값 = ${max(testArray)}`);
+</script>
