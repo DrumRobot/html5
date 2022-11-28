@@ -1,0 +1,13 @@
+<!-- selfjs/5-2-6-map.html -->
+<script>
+  // 배열을 초기화합니다.
+  let numbers = new Array(10).fill().map((_, i) => i);
+
+  // 배열의 메소드를 연속적으로 사용합니다.
+  numbers
+    .filter((value) => value % 2 === 0)
+    .map((value) => value * value)
+    .forEach((value) => {
+      console.log(value);
+    });
+</script>

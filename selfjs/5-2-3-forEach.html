@@ -1,0 +1,12 @@
+<!-- selfjs/5-2-3-forEach.js -->
+<script>
+  const numbers = [273, 52, 103, 32, 57];
+
+  numbers
+    .sort((a, b) => a - b) // [32, 52, 57, 103, 273]
+    .forEach(function (value, index, array) {
+      if (index > 0) {
+        console.log(`${value}는 ${array[index - 1]}보다 크다.`);
+      }
+    });
+</script>
