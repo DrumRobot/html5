@@ -1,0 +1,24 @@
+<!-- selfjs/7-1-7-rgb.html -->
+<script src="https://unpkg.com/lodash"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const divs = document.querySelectorAll('body > div');
+
+    divs.forEach((div) => {
+      // let rgb = new Array(3).fill().map(() => _.random(0, 255));
+      let rgb = [_.random(0, 255), _.random(0, 255), _.random(0, 255)]
+      rgb = rgb.join();
+      div.style.height = `10px`;
+      div.style.backgroundColor = `rgb(${rgb})`;
+    });
+  });
+</script>
+<body>
+  <!-- div 태그 25개 -->
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+</body>

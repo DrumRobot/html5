@@ -1,0 +1,22 @@
+<!-- selfjs/7-1-2-loaded.html -->
+<script>
+  // HTML 태그를 쉽게 만들 수 있는 콜백 함수를 선언합니다.
+  const h1 = (text) => `<h1>${text}</h1>`;
+
+  // DOMContentLoaded 이벤트를 연결합니다.
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.innerHTML += h1('DOMContentLoaded 이벤트 발생');
+  });
+  console.log(document.body); // null
+  document.body.innerHTML += h1('1번째 script 태그');
+</script>
+<body>
+  <script>
+    document.body.innerHTML += h1('2번째 script 태그');
+  </script>
+  <h1>1번째 h1 태그</h1>
+  <script>
+    document.body.innerHTML += h1('3번째 script 태그');
+  </script>
+  <h1>2번째 h2 태그</h1>
+</body>
