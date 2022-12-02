@@ -1,0 +1,19 @@
+<!-- selfjs/6-2-4-xml.html -->
+<script>
+  const xml = `
+  <books>
+    <book price="18000">
+      <name>혼자 공부하는 파이썬</name>
+      <publisher>한빛미디어</publisher>
+    </book>
+    <book price="26000">
+      <name>HTML5 웹 프로그래밍 입문</name>
+      <publisher>한빛아카데미</publisher>
+    </book>
+  </books>`;
+
+  // XML 문자열을 자바스크립트 DOM객체로 변환합니다.
+  const parser = new DOMParser();
+  const dom = parser.parseFromString(xml, 'text/xml');
+  console.log(dom.documentElement);
+</script>
