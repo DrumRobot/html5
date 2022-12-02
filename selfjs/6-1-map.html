@@ -1,0 +1,14 @@
+<!-- selfjs/6-1-map.html -->
+<script>
+  let map = new Map();
+
+  map.set('1', 'str1');   // 문자형 키
+  map.set(1, 'num1');     // 숫자형 키
+  map.set(true, 'bool1'); // 불린형 키
+
+  // 맵은 키의 타입을 변환시키지 않고 그대로 유지합니다.
+  console.log(map.get(1)); // 'num1'
+  console.log(map.get('1')); // 'str1'
+
+  console.log(map.size); // 3
+</script>
