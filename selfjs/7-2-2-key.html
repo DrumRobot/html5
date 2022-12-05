@@ -1,0 +1,21 @@
+<!-- selfjs/7-2-2-key.html -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const h1 = document.querySelector('h1')
+    const print = (event) => {
+      let output = ''
+      output += `alt: ${event.altKey}<br>`
+      output += `ctrl: ${event.ctrlKey}<br>`
+      output += `shift: ${event.shiftKey}<br>`
+      output += `code: ${event.code}<br>`
+      output += `keyCode: ${event.keyCode}<br>`
+      h1.innerHTML = output
+    }
+
+    document.addEventListener('keydown', print)
+    document.addEventListener('keyup', print)
+  })
+</script>
+<body>
+  <h1></h1>
+</body>
