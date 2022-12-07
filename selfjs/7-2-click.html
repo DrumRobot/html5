@@ -1,0 +1,14 @@
+<!-- selfjs/7-2-click.html -->
+<button>배경색 바꾸기</button>
+<script>
+  const btn = document.querySelector('button');
+  /* 0 부터 number 까지의 정수형 난수 생성 */
+  function random(number) {
+    return Math.floor(Math.random() * (number + 1));
+  }
+  /* 속성으로는 이벤트 리스너를 하나만 등록 가능 */
+  btn.onclick = function () {
+    const rndCol = [random(255), random(255), random(255)];
+    document.body.style.backgroundColor = `rgb(${rndCol})`;
+  };
+</script>
