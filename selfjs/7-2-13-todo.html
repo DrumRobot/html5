@@ -1,0 +1,91 @@
+<!-- selfjs/7-2-13-todo.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<style>
+  #todo-list > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+</style>
+<body>
+  <h1>할 일 목록</h1>
+  <input id="todo" />
+  <i class="fa-solid fa-trash"></i>
+  <button id="add-button">추가하기</button>
+  <div id="todo-list"></div>
+</body>
+<script>
+  // 문서 객체를 가져옵니다.
+  const input = document.querySelector('#todo');
+  const todoList = document.querySelector('#todo-list');
+  const addButton = document.querySelector('#add-button');
+
+  let keyCount = 0;
+
+  // 함수를 선언합니다.
+  const addTodo = () => {
+    // 입력 양식에 내용이 없으면 추가하지 않습니다.
+    if (input.value.trim() === '') {
+      alert('할 일을 입력해주세요.');
+      return;
+    }
+
+    const item = createTodo(keyCount++, input.value);
+    todoList.appendChild(item);
+
+    // 입력 양식의 내용을 비웁니다.
+    input.value = '';
+  };
+
+  const createTodo = (key, value) => {
+    // 문서 객체를 설정합니다.
+    const item = document.createElement('div');
+    const checkbox = document.createElement('input');
+    const text = document.createElement('span');
+    const button = document.createElement('i');
+
+    // item 객체를 조작하고 추가합니다.
+    item.setAttribute('data-key', key);
+    item.appendChild(checkbox);
+    item.appendChild(text);
+    item.appendChild(button);
+
+    // checkbox 객체를 조작합니다.
+    checkbox.type = 'checkbox';
+    checkbox.addEventListener('change', toggleTodo);
+
+    // text 객체를 조작합니다.
+    text.textContent = value;
+
+    // button 객체를 조작합니다.
+    // button.textContent = '제거하기';
+    // <i class="fa-solid fa-trash"></i>
+    button.class = 'fa-solid fa-trash';
+    button.setAttribute('class', 'fa-solid fa-trash');
+    button.addEventListener('click', () => {
+      removeTodo(key);
+    });
+    return item;
+  };
+
+  const removeTodo = (key) => {
+    // 식별 키로 문서 객체를 제거합니다.
+    const item = document.querySelector(`[data-key="${key}"]`);
+    todoList.removeChild(item);
+  };
+
+  const toggleTodo = function () {
+    const { checked, parentNode } = this;
+    parentNode.style.textDecoration = checked ? 'line-through' : '';
+  };
+
+  // 이벤트 연결
+  addButton.addEventListener('click', addTodo);
+  input.addEventListener('keyup', (event) => {
+    // 입력 양식에서 Enter 키를 누르면 바로 addTodo() 함수를 호출합니다.
+    const ENTER = 13;
+    if (event.keyCode === ENTER) {
+      addTodo();
+    }
+  });
+</script>

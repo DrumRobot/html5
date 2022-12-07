@@ -1,0 +1,16 @@
+<!-- clock/clock-12.html -->
+<input id="hour12" type="checkbox" />
+<label for="hour12">12시간</label>
+<div id="clock"></div>
+<script>
+  const clock = document.querySelector('#clock');
+  const hour12 = document.querySelector('#hour12');
+
+  setInterval(function () {
+    const date = new Date(); // 현재 날짜와 시간
+    clock.innerText = date.toLocaleTimeString('ko-KR', {
+      hour12: hour12.checked,
+      timeStyle: 'medium',
+    });
+  }, 100);
+</script>
