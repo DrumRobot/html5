@@ -1,0 +1,37 @@
+<!-- selfjs/9-2-7-private.html -->
+<script>
+  // 정사각형 클래스
+  class Square {
+    #length;
+
+    constructor(length) {
+      this.#setLength(length);
+    }
+
+    #setLength(length) {
+      if (length <= 0) {
+        throw '길이는 0보다 커야 합니다.';
+      }
+      this.#length = length;
+    }
+
+    // 정사각형의 둘레를 구하는 메소드
+    getPerimeter() {
+      return 4 * this.#length;
+    }
+
+    // 정사각형의 넓이를 구하는 메소드
+    getArea() {
+      return this.#length * this.#length;
+    }
+  }
+
+  // 클래스 사용하기
+  const square = new Square(10);
+  square.length = -10; // length 속성은 무시됨
+  console.log(`정사각형의 둘레: ${square.getPerimeter()}`);
+  console.log(`정사각형의 넓이: ${square.getArea()}`);
+  document.write(square.length);
+  //document.write(square.#length); // SyntaxError
+  // document.write(square.#setLength(-10)); // SyntaxError
+</script>

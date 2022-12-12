@@ -1,0 +1,27 @@
+<!-- selfjs/9-2-1-calc.html getter를 안쓴다면 -->
+<script>
+  class Rectangle {
+    constructor(width, height) {
+      this.width = width;
+      this.height = height;
+    }
+
+    // 사각형의 둘레를 구하는 메소드
+    calcPerimeter() {
+      this.perimeter = 2 * (this.width + this.height);
+    }
+
+    // 사각형의 넓이를 구하는 메소드
+    calcArea() {
+      this.area = this.width * this.height;
+    }
+  }
+
+  const rectangle = new Rectangle(10, 20);
+  rectangle.calcPerimeter();
+  console.log(`사각형의 둘레: ${rectangle.perimeter}`);
+  rectangle.calcArea();
+  console.log(`사각형의 넓이: ${rectangle.area}`);
+  rectangle.width = 20;
+  document.write(JSON.stringify(rectangle));
+</script>

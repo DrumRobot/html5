@@ -1,0 +1,41 @@
+<!-- selfjs/9-2-3-setter.html -->
+<script>
+  // 사각형 클래스
+  class Rectangle {
+    constructor(width = 0, height = 0) {
+      this.width = width;
+      this.height = height;
+    }
+
+    // 사각형의 둘레를 구하는 메소드
+    getPerimeter() {
+      return 2 * (this.width + this.height);
+    }
+
+    // 사각형의 넓이를 구하는 메소드
+    getArea() {
+      return this.width * this.height;
+    }
+  }
+
+  // 정사각형 클래스
+  class Square extends Rectangle {
+    constructor(length) {
+      super(length, length);
+    }
+
+    set length(length) {
+      if (length <= 0) {
+        throw '길이는 0보다 커야 합니다.';
+      }
+      this.width = length;
+      this.height = length;
+    }
+  }
+
+  // 클래스 사용하기
+  const square = new Square(10);
+  square.length = -10; // 예외 발생
+  console.log(`정사각형의 둘레: ${square.getPerimeter()}`);
+  console.log(`정사각형의 넓이: ${square.getArea()}`);
+</script>

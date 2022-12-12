@@ -1,0 +1,24 @@
+<!-- selfjs/9-2-1-getter.html -->
+<script>
+  class Rectangle {
+    constructor(width, height) {
+      this.width = width;
+      this.height = height;
+    }
+
+    // 사각형의 둘레를 구하는 메소드
+    get perimeter() {
+      return 2 * (this.width + this.height);
+    }
+
+    // 사각형의 넓이를 구하는 메소드
+    get area() {
+      return this.width * this.height;
+    }
+  }
+
+  const rectangle = new Rectangle(10, 20);
+  document.write(JSON.stringify(rectangle));
+  console.log(`사각형의 둘레: ${rectangle.perimeter}`);
+  console.log(`사각형의 넓이: ${rectangle.area}`);
+</script>
