@@ -15,6 +15,16 @@
       "outputCapture": "std",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
+    },
+    {
+      "name": "Clean",
+      "program": "${workspaceFolder}/.vscode/clean.js",
+      "args": ["${relativeFile}"],
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
     }
   ]
 }
