@@ -1,0 +1,38 @@
+<!-- selfjs/10-1-9-input.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  // 애플리케이션 클래스 생성하기
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        text: '',
+      };
+    }
+
+    render() {
+      return <div>
+        <input value={this.state.text} onChange={this.handleChange} />
+        <button onClick={this.handleClick}>지우기</button>
+        <h1>{this.state.text}</h1>
+      </div>
+    }
+
+    handleChange = (event) => {
+      this.setState({
+        text: event.target.value,
+      });
+    };
+
+    handleClick = (event) => {
+      console.log(event);
+      this.setState({
+        text: '',
+      });
+    };
+  }
+
+  ReactDOM.createRoot(document.body).render(<App />);
+</script>
