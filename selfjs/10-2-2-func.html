@@ -1,0 +1,18 @@
+<!-- selfjs/10-2-2-func.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  function App () {
+    return <ul>
+      <Item value="Item 컴포넌트 1번" />
+      <Item value="Item 컴포넌트 2번" />
+      <Item value="Item 컴포넌트 3번" />
+    </ul>
+  }
+
+  const Item = (props) => <li>{props.value}</li>
+
+  // 출력하기
+  ReactDOM.createRoot(document.body).render(<App />);
+</script>

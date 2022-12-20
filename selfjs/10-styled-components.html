@@ -1,0 +1,22 @@
+<!-- selfjs/10-styled-components.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/styled-components@4/dist/styled-components.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  const Button = styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 2px solid palevioletred;
+    color: palevioletred;
+    margin: 0 1em;
+    padding: 0.25em 1em;
+  `
+
+  const App = () => <div>
+    <Button>I'm a styled &lt;Button /&gt;</Button>
+  </div>
+
+  // 출력하기
+  ReactDOM.createRoot(document.body).render(<App />);
+</script>
