@@ -1,0 +1,23 @@
+<!-- async/1-promise-state.html -->
+<script>
+  // pending 대기상태
+  var pending = new Promise((resolve) => {});
+  console.log(pending);
+  // [[PromiseStatus]]: "pending"
+  // [[PromiseValue]]: undefined
+
+  // fulfilled 성공상태
+  var fulfilled = new Promise((resolve) => resolve('fulfilled'));
+  console.log(fulfilled);
+  // [[PromiseStatus]]: "fulfilled"
+  // [[PromiseValue]]: "fulfilled"
+
+  // rejected 실패상태
+  var rejected = new Promise((resolve, reject) => {
+    // throw new Error('rejected');
+    reject(new Error('rejected'));
+  });
+  console.log(rejected);
+  // [[PromiseStatus]]: "rejected"
+  // [[PromiseValue]]: Error: rejected at <anonymous>
+</script>

@@ -1,0 +1,18 @@
+<!-- html5/async/2-2-fetch.html -->
+<script>
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then((response) => {
+      if (response.ok) {
+        return response.json(); // Promise
+      }
+      throw new Error(response.status);
+    })
+    .then((data) => {
+      document.write(JSON.stringify(data)); // string
+      console.log(data); // object
+    })
+    .catch((error) => {
+      document.write(error);
+      console.error(error);
+    });
+</script>
