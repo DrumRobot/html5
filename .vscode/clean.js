@@ -6,20 +6,14 @@ const { JSDOM } = require('jsdom');
 const dom = new JSDOM(content);
 const { head, body } = dom.window.document;
 const title = head.querySelector('title');
-if (title.innerHTML == '') {
-    head.removeChild(title);
-} else {
-    console.log(title.innerHTML);
-}
+title && head.removeChild(title);
+body.replaceWith(...body.children);
 head?.replaceWith(...head?.children);
-if (body.innerHTML.trim() == '') {
-    body.parentNode.removeChild(body);
-}
 
 content = dom.serialize();
-content = content.replace('<!DOCTYPE html><html>', `<!-- ${file} -->\n`);
+content = content.replace('<!DOCTYPE html>', `<!-- ${file} -->\n`);
 content = content.replace('<!-- 리액트를 사용하는 코드 입력 -->', `<!-- ${file} -->`);
-content = content.replace('</html>', '');
+content = content.replace(/<\/?html>/g, '');
 content = content.replaceAll('@17', '@18');
 
 fs.writeFileSync(file, content);

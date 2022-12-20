@@ -5,6 +5,7 @@
       if (response.ok) {
         return response.json(); // Promise
       }
+      // return Promise.reject(response.status);
       throw new Error(response.status);
     })
     .then((data) => {
