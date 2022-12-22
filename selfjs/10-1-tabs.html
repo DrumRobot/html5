@@ -1,0 +1,43 @@
+<!-- selfjs/10-1-tabs.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/styled-components@4/dist/styled-components.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  const Tab = styled.div`
+    width: 3em;
+    border-bottom: ${({checked}) => checked ? '2px solid' : ''};
+    color: ${({checked}) => checked ? 'blue' : 'black'};
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+  `;
+
+  function App(props) {
+    const [checkedIndex, setChecked] = React.useState(0); // 상태관리 훅
+
+    const tabs = props.labels.map((label, index) => {
+      const handleClick = () => {
+        setChecked(index); // state를 바꾸고 렌더링이 다시 필요함을 알려줌
+      };
+      return <Tab checked={checkedIndex === index} onClick={handleClick}>
+        {label}
+      </Tab>
+    });
+
+    return <div>
+      <div>{tabs}</div>
+      <div>{/* 탭 내용*/}
+        {props.children[checkedIndex]}
+        <p>index: {checkedIndex}</p>
+      </div>
+    </div>
+  }
+
+  const root = ReactDOM.createRoot(document.body);
+  root.render(<App labels={['a', 'b', 'c']}>
+    <div>탭1</div>
+    <div>탭2</div>
+    <div>탭3</div>
+  </App>);
+</script>
