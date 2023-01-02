@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz 2</title>
+  </head>
+
+  <body>
+    <p id="changeContent">버튼을 누르면 이 요소의 내용이 변경됩니다.</p>
+    <input type="button" value="버튼을 누르세요!" onclick="changeContent()" />
+    <script>
+      function changeContent() {
+        document.getElementById('changeContent').innerHTML =
+          '이 텍스트는 자바 스크립트에서 변경한 것입니다.';
+      }
+    </script>
+  </body>
+</html>

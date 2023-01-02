@@ -1,0 +1,13 @@
+<ul>
+  <li>버튼을 누르면 li 요소가 추가됩니다.</li>
+</ul>
+<button id="button3">버튼을 누르세요!</button>
+<script>
+  let ul = document.querySelector('ul');
+  document.getElementById('button3').onclick = function () {
+    ul.insertAdjacentHTML(
+      'beforeend',
+      '<li>버튼을 누르면 li 요소가 추가됩니다.</li>'
+    );
+  };
+</script>

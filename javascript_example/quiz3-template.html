@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz 3 Template</title>
+  </head>
+  <body>
+    <ul>
+      <li>버튼을 누르면 li 요소가 추가됩니다.</li>
+    </ul>
+    <button id="testBtn">버튼을 누르세요!</button>
+    <script>
+      document.getElementById('testBtn').onclick = function () {
+        /* HTML 템플릿 사용 */
+        let template = document.createElement('template');
+        template.innerHTML = '<li>버튼을 누르면 li 요소가 추가됩니다.</li>';
+        document.querySelector('ul').appendChild(template.content.firstChild);
+      };
+    </script>
+  </body>
+</html>
