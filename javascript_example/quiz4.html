@@ -5,7 +5,7 @@
   <p>모든 구의 미세먼지를 표기해주세요</p>
   <p>업데이트 버튼을 누를 때마다 지웠다 새로 씌여져야 합니다.</p>
   <button id="updateButton">업데이트</button>
-  <div id="data"></div>
+  <ul id="data"></ul>
 </div>
 <script>
   const url = 'http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99'
@@ -15,8 +15,10 @@
       .then((data) => {
         console.log(data);
         const row = data.RealtimeCityAir.row;
-        document.querySelector('#data').textContent = JSON.stringify(row);
-        // TODO: row 배열을 li로 변환해서 출력하기
+        let ul = document.querySelector('#data');
+        row
+          .map((city) => `<li>${city.MSRSTE_NM}: ${city.PM10}</li>`)
+          .forEach((item) => ul.insertAdjacentHTML('beforeend', item));
       });
   };
 </script>
