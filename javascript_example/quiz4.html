@@ -16,6 +16,7 @@
         console.log(data);
         const row = data.RealtimeCityAir.row;
         let ul = document.querySelector('#data');
+        ul.innerHTML = '';
         row
           .map((city) => `<li>${city.MSRSTE_NM}: ${city.PM10}</li>`)
           .forEach((item) => ul.insertAdjacentHTML('beforeend', item));

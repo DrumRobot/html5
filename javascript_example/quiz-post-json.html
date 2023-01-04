@@ -1,0 +1,26 @@
+<!-- javascript_example/quiz-post-json.html -->
+<input name="message" />
+<button>전송</button>
+<pre></pre>
+<script>
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    let json = JSON.stringify({
+      datetime: new Date(),
+      message: document.querySelector('[name=message]').value
+    });
+    fetch('https://httpbin.org/post', {
+      /* HTTP 요청에 대한 옵션 */
+      body: json,
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    }).then((res) => {
+      return res.ok ?
+        res.text() : Promise.reject(res.status)
+    }).then((text) => {
+      document.querySelector('pre').textContent = text;
+    }).catch((error) => {
+      console.error(error);
+    });
+  });
+</script>

@@ -1,0 +1,25 @@
+<!-- javascript_example/ajax-formdata.html -->
+<form name="ajaxForm"> <!-- document.forms.ajaxForm에 저장 -->
+  <input name="message" />
+  <button>전송</button><!-- 클릭시 submit 이벤트 발생 -->
+</form>
+<pre></pre><!-- pre 태그에서는 텍스트가 그대로 출력됨 -->
+<script>
+  const { ajaxForm } = document.forms;
+  ajaxForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // form submit 이벤트의 페이지 이동 취소
+    let formData = new FormData(ajaxForm);
+    formData.append('datetime', new Date());
+    fetch('https://httpbin.org/post', {
+      body: formData,
+      method: 'POST',
+    }).then((res) => {
+      return res.ok ?
+        res.text() : Promise.reject(res.status)
+    }).then((text) => {
+      document.querySelector('pre').textContent = text;
+    }).catch((error) => {
+      console.error(error);
+    });
+  });
+</script>
