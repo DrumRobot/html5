@@ -1,0 +1,17 @@
+<!-- validate/check-numeric.html -->
+<script>
+  function checkNumeric(elem, msg) {
+    var exp = /^[0-9]+$/;
+    if (elem.value.match(exp)) {
+      return true;
+    } else {
+      alert(msg);
+      elem.focus();
+      return false;
+    }
+  }
+</script>
+<form onsubmit="return checkNumeric(document.getElementById('phone'), '숫자만 입력하세요!')">
+  전화번호(-없이 입력): <input type="phone" id="phone" pattern="^[0-9]+$" required />
+  <input type="submit" value="확인" />
+</form>

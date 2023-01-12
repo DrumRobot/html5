@@ -1,0 +1,25 @@
+<!-- validate/check-form.html -->
+<script>
+  function validate(form) {
+    // form 안의 input들은 name 속성과 일치하는 프로퍼티로 저장
+    const { name, phone } = form;
+    try {
+      if (!name.value.match(/[a-zA-Z]{6,8}/)) {
+        throw name;
+      }
+      if (!phone.value.match(/^[0-9]+$/)) {
+        throw phone;
+      }
+      return true;
+    } catch (input) {
+      input.focus();
+      alert(input.placeholder);
+      return false;
+    }
+  }
+</script>
+<form onsubmit="return validate(this)"><!-- onsubmit 함수에서 this는 해당 form -->
+  이름(6-8 문자): <input type="text" name="name" placeholder="6에서 8자로 입력하세요"><br>
+  전화번호(-없이 입력): <input type="phone" name="phone" placeholder="숫자만 입력하세요"><br>
+  <input type="submit" value="확인">
+</form>

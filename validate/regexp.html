@@ -1,0 +1,8 @@
+<!-- validate/regexp.html -->
+<script>
+  console.log('test'.match(/t/g)); // ["t"]
+  console.log(''.match(/[0-9]*/)); // [""]
+  console.log(''.match(/[0-9]+/)); // null
+  console.log('2023-01-12'.match(/\d/)); // ["2"]
+  console.log('2023-01-12'.match(/\d{4}-\d{2}-\d{2}/));
+</script>
