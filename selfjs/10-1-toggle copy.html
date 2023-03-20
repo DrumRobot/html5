@@ -1,0 +1,41 @@
+<!-- selfjs/10-1-toggle.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/styled-components@4/dist/styled-components.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  const Toggle = styled.div`
+    width: 3em;
+    border: 1px solid;
+    color: ${({checked}) => checked ? 'blue' : 'black'};
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    :first-child {
+      border-radius: 0.3em 0 0 0.3em;
+    }
+    :last-child {
+      border-radius: 0 0.3em 0.3em 0;
+    }
+  `;
+
+  function App() {
+    const [checked, setChecked] = React.useState(false); // 상태관리 훅
+
+    const handleClick = (event) => {
+      console.log(event.target.id);
+      setChecked(event.target.id === 'on');
+    };
+
+    return <div>
+      <Toggle id="on" checked={checked} onClick={handleClick}>
+        On
+      </Toggle>
+      <Toggle id="off" checked={!checked} onClick={handleClick}>
+        Off
+      </Toggle>
+    </div>;
+  }
+
+  ReactDOM.createRoot(document.body).render(<App />);
+</script>

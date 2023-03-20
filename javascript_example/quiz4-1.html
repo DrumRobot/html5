@@ -1,0 +1,18 @@
+<h1>AJAX를 연습하자!</h1>
+<hr />
+<div>
+  <h2>사이트의 HTML 코드 가져오기</h2>
+  <input id="url" value="https://google.com" />
+  <button id="fetchButton">GET</button>
+  <div id="code"></div>
+</div>
+<script>
+  const code = document.querySelector("#code")
+  document.querySelector('#fetchButton').onclick = () => {
+    const url = document.querySelector("#url").value;
+    fetch(url).then((res) => res.text())
+      .then((text) => {
+        code.textContent = text;
+      });
+  };
+</script>

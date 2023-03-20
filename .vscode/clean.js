@@ -11,7 +11,7 @@ body.replaceWith(...body.children);
 head?.replaceWith(...head?.children);
 
 content = dom.serialize();
-content = content.replace('<!DOCTYPE html>', `<!-- ${file} -->\n`);
+content = content.replace(/(<!DOCTYPE html>)|^/, `<!-- ${file} -->\n`);
 content = content.replace('<!-- 리액트를 사용하는 코드 입력 -->', `<!-- ${file} -->`);
 content = content.replace(/<\/?html>/g, '');
 content = content.replaceAll('@17', '@18');

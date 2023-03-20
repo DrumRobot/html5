@@ -1,0 +1,14 @@
+<form id="frm">
+  <input id="email" type="text"/>
+  <button>로그인</button>
+</form>
+<script>
+  frm.onsubmit = () => {
+    /* \w는 [A-Za-z0-9_]와 일치 */
+    if (!email.value.match(/^[\w.-]+@[\w-]+(\.[\w-]+){1,2}$/)) {
+      alert('이메일 형식이 올바르지 않습니다.');
+      return false;
+    }
+    return true;
+  }
+</script>

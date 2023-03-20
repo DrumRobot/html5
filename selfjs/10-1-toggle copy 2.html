@@ -1,0 +1,36 @@
+<!-- selfjs/10-1-toggle.html -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  // 애플리케이션 컴포넌트 생성하기
+  function App() {
+    const [checked, setChecked] = React.useState(false); // 상태관리 훅
+
+    const style = {
+      width: '3em',
+      border: '1px solid',
+      borderRadius: '0.3em',
+      color: checked ? 'blue' : 'red',
+      cursor: 'pointer',
+      display: 'inline-block',
+      textAlign: 'center',
+    };
+
+    const handleClick = (event) => {
+      console.log(event.target.id);
+      setChecked(event.target.id === 'on');
+    };
+
+    return <div>
+      <div id="on" style={style} onClick={handleClick}>
+        On
+      </div>
+      <div id="off" style={style} onClick={handleClick}>
+        Off
+      </div>
+    </div>;
+  }
+
+  ReactDOM.createRoot(document.body).render(<App />);
+</script>

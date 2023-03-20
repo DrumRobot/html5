@@ -1,0 +1,37 @@
+<h1>AJAX를 연습하자!</h1>
+<hr />
+<style>
+  th { background-color: antiquewhite; }
+</style>
+<div>
+  <h2>1. 서울시 OpenAPI(실시간 미세먼지 상태)를 이용하기</h2>
+  <p>모든 구의 미세먼지를 표기해주세요</p>
+  <p>업데이트 버튼을 누를 때마다 지웠다 새로 씌여져야 합니다.</p>
+  <button id="updateButton">업데이트</button>
+  <table id="data" border="1px" style="text-align: center;">
+    <tr>
+      <th style="width: 4rem;">지역</th>
+      <th>미세먼지 농도</th>
+      <th>초미세먼지 농도</th>
+    </tr>
+  </table>
+</div>
+<script>
+  /* quiz4-table.html */
+  const table = document.querySelector('#data');
+  const header = table.querySelector('tr'); // 헤더를 미리 저장
+  const url = 'http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99'
+  document.querySelector('#updateButton').onclick = () => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        table.innerHTML = '';
+        table.appendChild(header); // 내용을 지우고 헤더만 다시 추가
+        data.RealtimeCityAir.row
+          // TODO: 나머지 데이터 채우기
+          .map((city) => `<tr><td>${city.MSRSTE_NM}</td><td></td><td></td></tr>`)
+          .forEach((item) => table.insertAdjacentHTML('beforeend', item));
+      });
+  };
+</script>

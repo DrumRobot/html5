@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+  <ul>
+    <li v-for="n in list">{{ n }}</li>
+  </ul>
+</div>
+<script>
+  var app = Vue.createApp({
+    data() {
+      return {
+        list: ['Vue.js', 'React.js', 'Polymer.js', 'Google', 'Hanbit'],
+      };
+    },
+  });
+  app.mount('#app');
+</script>

@@ -1,0 +1,10 @@
+<!-- selfjs/7-1-4-jq.html -->
+<script src="https://unpkg.com/jquery"></script>
+<body>
+  <button click="alert('테스트')">테스트</button>
+  <script>
+    $('button').click((e) => alert('test'));
+    $('button').off('click').click((e) => alert(JSON.stringify(e)));
+    $('button').trigger('click');
+  </script>
+</body>

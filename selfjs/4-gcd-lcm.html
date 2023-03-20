@@ -1,0 +1,18 @@
+<!-- self/3-gcd-lcm.html -->
+<script>
+  const a = parseInt(prompt('첫 번째 수를 입력하세요.'));
+  const b = parseInt(prompt('두 번째 수를 입력하세요.'));
+
+  const min = Math.min(a, b);
+  for (let i = min; i >= 1; i--) {
+    if (a % i != 0 || b % i != 0) {
+      continue;
+    }
+    const lcm = a * b / i;
+    alert(`
+      최대공약수 GCD(${a}, ${b}) = ${i}
+      최소공배수 LCM(${a}, ${b}) = ${lcm}
+    `);
+    break;
+  }
+</script>
